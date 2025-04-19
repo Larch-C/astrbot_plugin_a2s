@@ -1,0 +1,6 @@
+name: astrbot_plugin_a2s
+desc: 这是 AstrBot 的A2S查询插件。
+help: 输入 /ip ip:port 查看服务器状态。
+version: v1.0.0
+author: ZvZPvz
+repo: https://github.com/ZvZPvz/astrbot_plugin_a2s
