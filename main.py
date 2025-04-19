@@ -362,7 +362,9 @@ class ServerQuery(Star):
     @filter.command("a2s_help")
     async def query_server_help(self, event: AstrMessageEvent):
         yield event.plain_result("AS2S协议服务器状态查询插件\n"
-                           "指令：/ip 地址:端口\n"
+                           "指令：\n"
+                           "/ip ip:port (image)\n"
+                           "/ipt ip:port (text)\n"
                            "作者：ZvZPvz\n"
                            "版本：1.0.0\n"
                            "Github：https://github.com/ZvZPvz/astrbot_plugin_a2s")
