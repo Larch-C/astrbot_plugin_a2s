@@ -4,7 +4,7 @@ _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态�
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![AstrBot](https://img.shields.io/badge/AstrBot-3.4%2B-orange.svg)](https://github.com/Soulter/AstrBot)
-[![GitHub](https://img.shields.io/badge/作者-Zhalslar-blue)](https://github.com/Zhalslar)
+[![GitHub](https://img.shields.io/badge/作者-ZvZPvz-blue)](https://github.com/ZvZPvz))
 
 </div>
 
@@ -34,3 +34,6 @@ _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态�
 - 🐛 提交 Issue 报告问题
 - 💡 提出新功能建议
 - 🔧 提交 Pull Request 改进代码
+
+# 支持
+本插件样式参照: [https://github.com/tinkerbellqwq/astrbot_plugin_status-pro](https://github.com/tinkerbellqwq/astrbot_plugin_status-pro)
