@@ -359,6 +359,32 @@ class ServerQuery(Star):
                 "3. 稍后重试"
             )
 
+    @filter.command("ipt")
+    async def query_text_server(self, event: AstrMessageEvent, *, name: str):
+        try:
+            if ":" not in name:
+                yield event.plain_result("格式: /ip 地址:端口")
+                return
+                
+            host, port = name.rsplit(":", 1)
+            if not port.isdigit():
+                raise ValueError("端口必须是数字")
+            
+            address = host, int(port)
+            info = await a2s.ainfo(address)
+            players = await a2s.aplayers(address)
+            #rules = await a2s.arules(address)
+            yield event.plain_result(self.format_response(host, port, info, players))
+            
+        except Exception as e:
+            logger.error(f"查询失败: {e}")
+            yield event.plain_result(
+                "⛔ 查询失败，请检查：\n"
+                "1. 服务器是否在线\n"
+                "2. 输入地址是否正确\n"
+                "3. 稍后重试"
+            )
+            
     @filter.command("a2s_help")
     async def query_server_help(self, event: AstrMessageEvent):
         yield event.plain_result("AS2S协议服务器状态查询插件\n"
