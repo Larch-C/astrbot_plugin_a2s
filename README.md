@@ -1,10 +1,10 @@
 # astrbot_plugin_box
 
-_✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态查询插件(Source) ✨_  
+_✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态查询插件 (Source) ✨_  
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![AstrBot](https://img.shields.io/badge/AstrBot-3.4%2B-orange.svg)](https://github.com/Soulter/AstrBot)
-[![GitHub](https://img.shields.io/badge/作者-ZvZPvz-blue)](https://github.com/ZvZPvz))
+[![GitHub](https://img.shields.io/badge/作者-ZvZPvz-blue)](https://github.com/ZvZPvz)
 
 </div>
 
@@ -36,4 +36,4 @@ _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态�
 - 🔧 提交 Pull Request 改进代码
 
 # 支持
-本插件样式参照: [https://github.com/tinkerbellqwq/astrbot_plugin_status-pro](https://github.com/tinkerbellqwq/astrbot_plugin_status-pro)
+本插件图片生成样式参照: [https://github.com/tinkerbellqwq/astrbot_plugin_status-pro](https://github.com/tinkerbellqwq/astrbot_plugin_status-pro)
