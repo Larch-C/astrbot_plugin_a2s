@@ -1,3 +1,4 @@
 playwright
 a2s
 textwrap
+python-a2s
