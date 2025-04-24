@@ -4,7 +4,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 import a2s
 import os
-import random
+import python-a2s
 from email.policy import default
 from playwright.async_api import async_playwright
 import platform
