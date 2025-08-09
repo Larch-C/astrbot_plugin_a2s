@@ -15,9 +15,10 @@ _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态�
 ## 📦 安装
 
 - pip安装插件目录下的requirements.txt
-- （如果只使用/ipt可以跳过此处）装完之后。进入到你`Astrbot`的环境下进行安装浏览器驱动，命令如下：
+- （如果只使用/ipt和/findt可以跳过此处）装完之后。进入到你`Astrbot`的环境下进行安装浏览器驱动，命令如下：
   ```shell
   playwright install chromium
+- 如果需要使用/find和/findt请在插件配置里你自己的Steam Web API Key
 
 ## ⌨️ 使用说明
 
@@ -26,6 +27,8 @@ _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态�
 ```plaintext
 /ip 地址:端口 （返回服务器信息图片）
 /ipt 地址:端口 （返回服务器信息文字）
+/find 游戏AppID|服务器名称 （返回服务器信息图片）
+/findt 游戏AppID|服务器名称 （返回服务器信息文字）
 ```
 
 ## 👥 贡献指南
