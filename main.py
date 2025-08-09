@@ -385,9 +385,7 @@ class A2SServerQuery(Star):
             yield event.plain_result("⏳ 正在查詢伺服器資訊並產生圖片...")
             image_path = await self._query_server(host, port, render_as_image=True)
             yield event.image_result(image_path)
-        
-        except (a2s.errors.A2SNoResponseError, TimeoutError):
-             yield event.plain_result("⛔ 查詢逾時！伺服器可能已離線或無法存取。")
+
         except Exception as e:
             logger.error(f"查詢失敗: {e}")
             yield event.plain_result(f"⛔ 查詢失敗: {e}")
@@ -407,9 +405,7 @@ class A2SServerQuery(Star):
             yield event.plain_result("⏳ 正在查詢伺服器資訊...")
             response_text = await self._query_server(host, port, render_as_image=False)
             yield event.plain_result(response_text)
-            
-        except (a2s.errors.A2SNoResponseError, TimeoutError):
-             yield event.plain_result("⛔ 查詢逾時！伺服器可能已離線或無法存取。")
+
         except Exception as e:
             logger.error(f"查詢失敗: {e}")
             yield event.plain_result(f"⛔ 查詢失敗: {e}")
