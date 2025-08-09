@@ -1,0 +1,10 @@
+{
+  "steam_api_key": {
+      "description": "Steam Web API Key",
+      "type": "string",
+      "hint": "用于伺服器列表查詢。在https://steamcommunity.com/dev/apikey獲取。",
+      "default": "",
+      "is_sensitive": true,
+      "required": true
+  }
+}
