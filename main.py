@@ -416,6 +416,8 @@ class A2SServerQuery(Star):
 
     async def _search_server_ip(self, game_id, keyword):
         API_KEY = self.apikey
+        if not API_KEY or API_KEY == "" or API_KEY == "YOURSTEAMAPIKEY":
+            raise ValueError("無效的STEAMAPIKEY！")
         url = f"https://api.steampowered.com/IGameServersService/GetServerList/v1/?key={API_KEY}&filter=\\appid\\{game_id}"
         
         try:
