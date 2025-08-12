@@ -478,3 +478,38 @@ class A2SServerQuery(Star):
             yield event.plain_result(
                 "⛔ 查询返回无结果！"
             )
+
+    @filter.llm_tool("find_steam_game_server")
+    async def find_server_ip(self, event: AstrMessageEvent, steamappid: str, name: str):
+        """Find a Steam game server by its name, returning the IP and port.
+        If multiple servers are found, return the first one.
+        Use get_ip_a2s_server_info the query server information if game support a2s query.
+        If user not provided which game, treat it as Garry's Mod(4000)
+        
+        Args:
+            steamappid (string): The Steam App ID of the game.
+            name (string): The name or keyword of the game server.
+        """
+        try:
+            result = await self._search_server_ip(steamappid, name)
+            return result
+
+        except Exception as e:
+            logger.error(f"调用 get_a2s_info 时出错: {e}")
+            return f"⛔ 查询失败: {e}"
+        
+    @filter.llm_tool("get_ip_a2s_server_info")
+    async def get_a2s_info(self, event: AstrMessageEvent, ip: str, port: str = "27015"):
+        """Query A2S(A UDP-based game server query protocol) server information.
+
+        Args:
+            ip (string): The IP address of the server.
+            port (string): The port number of the server, default is 27015.
+        """
+        try:
+            result = await self._query_server(ip, port, render_as_image=False)
+            return result
+
+        except Exception as e:
+            logger.error(f"调用 get_a2s_info 时出错: {e}")
+            return f"⛔ 查询失败: {e}"
