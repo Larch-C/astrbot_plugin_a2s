@@ -1,4 +1,5 @@
 playwright
 a2s
+python-a2s
 requests
 playwright
