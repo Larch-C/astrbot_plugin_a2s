@@ -2,7 +2,7 @@
 
 _✨ [astrbot](https://github.com/AstrBotDevs/AstrBot) A2S协议服务器状态查询插件 (Source) ✨_  
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![AstrBot](https://img.shields.io/badge/AstrBot-3.4%2B-orange.svg)](https://github.com/Soulter/AstrBot)
 [![GitHub](https://img.shields.io/badge/作者-ZvZPvz-blue)](https://github.com/ZvZPvz)
 
