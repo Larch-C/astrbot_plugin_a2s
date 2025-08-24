@@ -6,5 +6,11 @@
       "default": "",
       "is_sensitive": true,
       "required": true
+  },
+  "monitor_servers": {
+      "type": "list",
+      "description": "需要监控的服务器列表",
+      "hint": "请输入需要监控的遊戲AppID|伺服器名字，使用列表格式，例如： 4000|ASTRBOT （當檢測到有人發送ASTRBOT時查詢gmod中名為ASTRBOT的伺服器）",
+      "default": []
   }
 }
