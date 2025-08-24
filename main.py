@@ -481,8 +481,18 @@ class A2SServerQuery(Star):
             yield event.plain_result(
                 "⛔ 查询返回无结果！"
             )
-
+            
+    @filter.command("a2s_help")
+    async def query_server_help(self, event: AstrMessageEvent):
+        yield event.plain_result("AS2S协议服务器状态查询插件\n"
+                           "指令：\n"
+                           "/ip ip:port (image)\n"
+                           "/ipt ip:port (text)\n"
+                           "作者：ZvZPvz\n"
+                           "版本：1.0.0\n"
+                           "Github：https://github.com/ZvZPvz/astrbot_plugin_a2s")
     @filter.llm_tool("find_steam_game_server")
+    
     async def find_server_ip(self, event: AstrMessageEvent, steamappid: str, name: str):
         """Find a Steam game server by its name, returning the IP and port.
         If multiple servers are found, return the first one.
