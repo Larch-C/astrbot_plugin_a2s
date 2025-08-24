@@ -2,6 +2,8 @@
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
+from astrbot.api.event.filter import EventMessageType
+from astrbot.core.message.message_event_result import MessageChain
 import a2s
 import random
 from playwright.async_api import async_playwright
@@ -321,7 +323,7 @@ async def render_to_image_url(url, output="server_status2.png"):
     return output
 
 
-@register("a2s_server_info", "伺服器查詢", "A2S協議伺服器狀態查詢插件", "2.0.0")
+@register("a2s_server_info", "伺服器查詢", "A2S協議伺服器狀態查詢插件", "2.1.0")
 class A2SServerQuery(Star):
     def __init__(self, context: Context, config: dict):
         super().__init__(context)
@@ -485,7 +487,6 @@ class A2SServerQuery(Star):
         """Find a Steam game server by its name, returning the IP and port.
         If multiple servers are found, return the first one.
         Use get_ip_a2s_server_info the query server information if game support a2s query.
-        If user not provided which game, treat it as Garry's Mod(4000)
         
         Args:
             steamappid (string): The Steam App ID of the game.
@@ -514,3 +515,24 @@ class A2SServerQuery(Star):
         except Exception as e:
             logger.error(f"调用 get_a2s_info 时出错: {e}")
             return f"⛔ 查询失败: {e}"
+
+    @filter.event_message_type(EventMessageType.ALL)
+    async def check_server_name_prefix(self, event: AstrMessageEvent):
+        """
+        检查消息中的服务器名称前缀
+        """
+        for word in self.server_list:
+            appid, server_name = word.split("|")
+            if server_name == event.message_str:
+                try:
+                    host, port = await self._search_server_ip(appid, server_name)
+                    image_path = await self._query_server(host, port)
+                    yield event.image_result(image_path)
+                except Exception as e:
+                    logger.error(f"查询失败: {e}")
+                    yield event.plain_result(
+                        f"⛔ 查询失败，{e}，请检查：\n"
+                        "1. 服务器是否在线\n"
+                        "2. 稍后重试"
+                    )
+                    break
